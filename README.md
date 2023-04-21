@@ -5,19 +5,6 @@ This repository contains resources for learning and using Geometric Algebra, a m
 ## Contents
 
 - [Books](#books)
-- [Tutorials](#tutorials)
-- [Videos](#videos)
+- [Notes](#notes)
+- [Code](#code)
 
-## Books
-
-- [Geometric Algebra for Physicists](https://www.cambridge.org/core/books/geometric-algebra-for-physicists/8D31534EDE7DEDBE75FECB6C3790AFA3) by Chris Doran and Anthony Lasenby
-
-## Tutorials
-
-- [Geometric Algebra Tutorial](http://faculty.luther.edu/~macdonal/laga/) by Alan MacDonald
-
-## Videos
-
-- [Geometric Algebra Playlist](https://www.youtube.com/playlist?list=PLbnrZHfNEDZz-dhg5t5rNBjZJfzpOF1xI) by Mathoma
-
- GeometricAlgebra
