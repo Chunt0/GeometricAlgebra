@@ -12,9 +12,10 @@ def eulers_rot(vec, theta):
         vec_rot = np.array([np.real(vec_rot[1]), np.imag(vec_rot[1])])
     else:
         vec_rot = np.array([np.real(vec_rot[0]), np.imag(vec_rot[0])])
+    return vec_rot
 
 # My base vector that I'm going to rotate
-x = np.array([1,0])
+x = np.array([1,4])
 
 # Some vectors that I'll use to form random angles of theta
 v1 = np.array([-1, -1])
@@ -28,7 +29,11 @@ print(f"Theta: {theta*(180/np.pi)}")
 # Rotate my vector x
 # The product from eulers
 x_rot = eulers_rot(x, theta)
-print(x_rot)
+
+# Print values
+print(f"Rotation Angle: {theta*(180/np.pi)}")
+print(f"Original Vector: {x}")
+print(f"Rotated vector: {x_rot}")
 
 # Create a figure and axis object
 fig, ax = plt.subplots()
