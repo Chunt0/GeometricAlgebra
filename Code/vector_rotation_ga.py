@@ -1,13 +1,42 @@
+import clifford as cf
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Creat a 2D geometric algebra space
+layout, blades = cf.C1(2)
+
+# Define the basis vectors
+e1 = blades['e1']
+e2 = blades['e2']
+e12 = blades['e12']
+
+# My original 2d vector
+x = e1
+
+# My two vectors that I will use to rotate x by the angle between
+# Current angle = pi/4
+v1 = 1*e1 # [1,0]
+v2 = 1*e1 + 1*e2 # [1,1]
+
+# Rotate my vector x
+x_rot = v1*v2*x
+print(x_rot)
+if np.linalg.norm(x_rot[0]) == 0: 
+    x_rot = np.array([np.real(x_rot[1]), np.imag(x_rot[1])])
+else:
+    x_rot = np.array([np.real(x_rot[0]), np.imag(x_rot[0])])
+print(x_rot)
+
+# Show the plot
+plt.show()# Extract the x and y components of the vectors
+x = [x(e1), x_rot(e1)]
+y = [x(e2), x_rot(e2)]
+
 # Create a figure and axis object
 fig, ax = plt.subplots()
 
 # Plot the vectors
-ax.quiver(0, 0, x[0], x[1], angles='xy', scale_units='xy', scale=1, color='r')
-ax.quiver(0, 0, x_rot[0], x_rot[1], angles='xy', scale_units='xy', scale=1, color='b')
-
-# Calculate the angle between the original vector and the rotated one
-cos_theta = np.dot(x, x_rot) / (np.linalg.norm(x) * np.linalg.norm(x_rot))
-theta = np.arccos(cos_theta) * 180 / np.pi
+ax.quiver([0, 0], [0, 0], x, y, angles='xy', scale_units='xy', scale=1, color=['r', 'b'])
 
 # Set the limits of the plot
 ax.set_xlim([-3, 3])
@@ -17,9 +46,6 @@ ax.set_ylim([-1, 4])
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_title('Vector Plot')
-
-# Add text annotation for the angle between the vectors
-ax.text(0.5, 2.5, f'Angle: {theta:.2f} degrees', fontsize=12)
 
 # Show the plot
 plt.show()
