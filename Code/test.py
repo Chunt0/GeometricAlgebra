@@ -1,15 +1,14 @@
-import clifford as cf
+import numpy as np
 
-layout, blades = cf.Cl(3)
+# Define a vector
+v = np.array([1, 0])
 
-x = blades['e1']
-y = blades['e2']
-z = blades['e3']
+# Define the angle of rotation in radians
+theta = np.pi/4
 
-xy = blades['e12']
-yz = blades['e23']
+# Compute the rotated vector using Euler's formula
+rotated_v = np.exp(1j*theta) * v
 
-a = (x + 2*y + 3*z)
-B = (xy + yz)
-
-print(a*B)
+# Print the original and rotated vectors
+print(f'Original vector: {v}')
+print(f'Rotated vector: {rotated_v}')
