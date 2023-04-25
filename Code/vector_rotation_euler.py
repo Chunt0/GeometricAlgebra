@@ -3,8 +3,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Euler's formula to rotate a vector by theta
+# There's an issue with getting a vector back with complex components
+# and sometimes one or the other value in the list is 0. Anyway this tries
+# to clean things up and give me a nice np.array to work with.
 def eulers_rot(vec, theta):
-    return vec*np.exp(1j*theta)
+    vec_rot = vec*np.exp(1j*theta)
+    if np.linalg.norm(vec_rot[0]) == 0: 
+        vec_rot = np.array([np.real(vec_rot[1]), np.imag(vec_rot[1])])
+    else:
+        vec_rot = np.array([np.real(vec_rot[0]), np.imag(vec_rot[0])])
 
 # My base vector that I'm going to rotate
 x = np.array([1,0])
@@ -19,12 +26,8 @@ theta = np.arccos(cos_theta)
 print(f"Theta: {theta*(180/np.pi)}")
 
 # Rotate my vector x
+# The product from eulers
 x_rot = eulers_rot(x, theta)
-print(x_rot)
-if np.linalg.norm(x_rot[0]) == 0: 
-    x_rot = np.array([np.real(x_rot[1]), np.imag(x_rot[1])])
-else:
-    x_rot = np.array([np.real(x_rot[0]), np.imag(x_rot[0])])
 print(x_rot)
 
 # Create a figure and axis object
