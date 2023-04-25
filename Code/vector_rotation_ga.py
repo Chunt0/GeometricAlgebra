@@ -13,7 +13,7 @@ e3 = blades['e3']
 e12 = blades['e12']
 
 # Define my original 2d vector
-x = e1
+x = e1 # [1,0,0]
 
 # Define the two vectors that I will use to rotate x by the angle between
 # Current angle = pi/4
@@ -21,8 +21,7 @@ v1 = 1*e1 + 0*e2 + 0*e3 # [1,0,0]
 v2 = 1*e1 + 1*e2 + 0*e3 # [1,1,0]
 
 # Find the angle between these two vectors
-# Gotta convert the vector to a np.array, the function angle_between_vectors
-# Doesn't seem to work...
+# Gotta convert the vector to a np.array, the function angle_between_vectors doesn't seem to work...
 v1_np = euc_mv_to_np(v1)
 v2_np = euc_mv_to_np(v2)
 cos_theta = np.dot(v1_np, v2_np) / (np.linalg.norm(v1_np) * np.linalg.norm(v2_np))
