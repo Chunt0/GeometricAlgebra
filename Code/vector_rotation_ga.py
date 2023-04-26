@@ -13,8 +13,8 @@ e3 = blades['e3']
 e12 = blades['e12']
 
 x0, y0, z0 = 1,1,0 # Original vector coordinates
-x1, y1, z1 = -1,2,0 # v1 coordinates
-x2, y2, z2 = .1,-3,0 # v2 coordinates
+x1, y1, z1 = 1,0,0 # v1 coordinates
+x2, y2, z2 = .5,np.sqrt(3)/2,0 # v2 coordinates
 
 # Define my original 2d vector
 x = x0*e1+y0*e2+z0*e3 
