@@ -4,7 +4,7 @@ This repository contains resources for learning and using Geometric Algebra.
 
 ## Contents
 
-- [Books](#books)
+- [Resources](#resources)
 - [Notes](#notes)
 - [Code](#code)
 

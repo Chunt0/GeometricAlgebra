@@ -3,7 +3,7 @@ from clifford.tools.g3 import euc_mv_to_np
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Create a 2D geometric algebra space
+# Create a 3D geometric algebra space
 layout, blades = cf.Cl(3)
 
 # Define the basis vectors
@@ -28,7 +28,7 @@ cos_theta = np.dot(v1_np, v2_np) / (np.linalg.norm(v1_np) * np.linalg.norm(v2_np
 theta = np.arccos(cos_theta)
 
 # Rotate my vector x
-x_rot = v1*v2*x
+x_rot = x*v1*v2
 print(f"Rotation Angle: {theta*(180/np.pi)}")
 print(f"Original Vector: {x}")
 print(f"Rotated vector: {x_rot}")
