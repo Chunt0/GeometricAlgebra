@@ -12,7 +12,7 @@ e2 = blades['e2']
 e3 = blades['e3']
 e12 = blades['e12']
 
-x0, y0, z0 = 1,1,0 # Original vector coordinates
+x0, y0, z0 = 1,4,0 # Original vector coordinates
 x1, y1, z1 = 1,0,0 # v1 coordinates
 x2, y2, z2 = .5,np.sqrt(3)/2,0 # v2 coordinates
 
@@ -33,7 +33,7 @@ theta = np.arccos(cos_theta)
 # Rotate my vector x
 x_rot = v1*v2*x
 print(f"Rotation Angle: {theta*(180/np.pi)}")
-print(f"Original Vector: {v1}")
+print(f"Original Vector: {x}")
 print(f"Rotated vector: {x_rot}")
 
 # Convert x and x_rot into np.array in order to plot
