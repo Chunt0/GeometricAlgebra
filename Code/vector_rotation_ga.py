@@ -20,8 +20,8 @@ x2, y2, z2 = 5, -2, 0 # v2 coordinates
 x = x0*e1+y0*e2+z0*e3 
 
 # Define the two vectors that I will use to rotate x by the angle between
-v1 = x1*e1 + y1*e2 + z1*e3 
-v2 = x2*e1 + y2*e2 + z2*e3 
+v1 = (x1*e1 + y1*e2 + z1*e3)*(1/(np.sqrt(x1**2+y1**2+z1**2))) 
+v2 = (x2*e1 + y2*e2 + z2*e3)*(1/(np.sqrt(x2**2+y2**2+z2**2))) 
 
 # Find the angle between these two vectors
 # Gotta convert the vector to a np.array, the function angle_between_vectors doesn't seem to work...
