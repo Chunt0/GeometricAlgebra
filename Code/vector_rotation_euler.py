@@ -7,7 +7,9 @@ import numpy as np
 # and sometimes one or the other value in the list is 0. Anyway this tries
 # to clean things up and give me a nice np.array to work with.
 def eulers_rot(vec, theta):
+    vec_mag = np.linalg.norm(vec) # For some reason I need to rescale the rotated vector?
     vec_rot = vec*np.exp(1j*theta)
+    print(vec_rot)
     if np.linalg.norm(vec_rot[0]) == 0: 
         vec_rot = np.array([np.real(vec_rot[1]), np.imag(vec_rot[1])])
     else:

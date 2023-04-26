@@ -12,13 +12,16 @@ e2 = blades['e2']
 e3 = blades['e3']
 e12 = blades['e12']
 
+x0, y0, z0 = 1,4,0 # Original vector coordinates
+x1, y1, z1 = -1,-1,0 # v1 coordinates
+x2, y2, z2 = 5, -2, 0 # v2 coordinates
+
 # Define my original 2d vector
-x = e1 # [1,0,0]
+x = x0*e1+y0*e2+z0*e3 
 
 # Define the two vectors that I will use to rotate x by the angle between
-# Current angle = pi/4
-v1 = 1*e1 + 0*e2 + 0*e3 # [1,0,0]
-v2 = 1*e1 + 1*e2 + 0*e3 # [1,1,0]
+v1 = x1*e1 + y1*e2 + z1*e3 
+v2 = x2*e1 + y2*e2 + z2*e3 
 
 # Find the angle between these two vectors
 # Gotta convert the vector to a np.array, the function angle_between_vectors doesn't seem to work...
@@ -49,8 +52,10 @@ cos_theta = np.dot(x_np, x_rot_np) / (np.linalg.norm(x_np) * np.linalg.norm(x_ro
 theta = np.arccos(cos_theta) * 180 / np.pi
 
 # Set the limits of the plot
-ax.set_xlim([-3, 3])
-ax.set_ylim([-3, 3])
+xlim = 10
+ylim = 10
+ax.set_xlim([-1*xlim, xlim])
+ax.set_ylim([-1*ylim, ylim])
 
 # Add labels and title
 ax.set_xlabel('X')
