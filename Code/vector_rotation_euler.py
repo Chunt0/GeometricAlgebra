@@ -44,8 +44,13 @@ cos_theta = np.dot(x, x_rot) / (np.linalg.norm(x) * np.linalg.norm(x_rot))
 theta = np.arccos(cos_theta) * 180 / np.pi
 
 # Set the limits of the plot
-ax.set_xlim([-3, 3])
-ax.set_ylim([-1, 4])
+xlim = 5
+ylim = 5
+ax.set_xlim([-1*xlim, xlim])
+ax.set_ylim([-1*ylim, ylim])
+
+# Set the aspect ratio to make the plot square
+ax.set_aspect('equal')
 
 # Add labels and title
 ax.set_xlabel('X')

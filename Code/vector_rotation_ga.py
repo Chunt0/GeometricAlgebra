@@ -10,9 +10,8 @@ layout, blades = cf.Cl(3)
 e1 = blades['e1']
 e2 = blades['e2']
 e3 = blades['e3']
-e12 = blades['e12']
 
-x0, y0, z0 = 1,4,0 # Original vector coordinates
+x0, y0, z0 = 1,0,0 # Original vector coordinates
 x1, y1, z1 = 1,0,0 # v1 coordinates
 x2, y2, z2 = .5,np.sqrt(3)/2,0 # v2 coordinates
 
@@ -56,6 +55,9 @@ xlim = 5
 ylim = 5
 ax.set_xlim([-1*xlim, xlim])
 ax.set_ylim([-1*ylim, ylim])
+
+# Set the aspect ratio to make the plot square
+ax.set_aspect('equal')
 
 # Add labels and title
 ax.set_xlabel('X')
