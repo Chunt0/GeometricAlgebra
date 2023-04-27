@@ -7,17 +7,16 @@ import numpy as np
 # and sometimes one or the other value in the list is 0. Anyway this tries
 # to clean things up and give me a nice np.array to work with.
 def eulers_rot(vec, theta):
-    complex_rotation = np.exp(1j*theta)
-    vec_rot = vec * complex_rotation
-    rotated_vec =[np.real(vec_rot), np.imag(vec_rot)]
-    return rotated_vec
+    complex_rotation = (vec[0] + vec[1]*1j)*np.exp(1j*theta)
+    vec_rot =np.array([np.real(complex_rotation), np.imag(complex_rotation)])
+    return vec_rot
 
 # My base vector that I'm going to rotate
-x = np.array([1,4])
+x = np.array([1,3])
 
 # Some vectors that I'll use to form random angles of theta
-v1 = np.array([-1, -1])
-v2 = np.array([5, -2])
+v1 = np.array([-1, 0 ])
+v2 = np.array([0, -1])
 
 # Calculate the angle between these vectors
 cos_theta = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))

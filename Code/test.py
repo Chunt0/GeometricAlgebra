@@ -15,7 +15,7 @@ e12 = blades['e12']
 
 x0, y0, z0 = 1, 1, 1  # Original vector coordinates
 x1, y1, z1 = 1, 0, 0  # v1 coordinates
-x2, y2, z2 = 0, 1, 0  # v2 coordinates
+x2, y2, z2 = 1, 1, 0  # v2 coordinates
 
 # Define my original 2d vector
 x = x0 * e1 + y0 * e2 + z0 * e3
@@ -32,7 +32,7 @@ cos_theta = np.dot(v1_np, v2_np) / (np.linalg.norm(v1_np) * np.linalg.norm(v2_np
 theta = np.arccos(cos_theta)
 
 # Rotate my vector x
-x_rot = v1 * v2 * x * v2*v1
+x_rot = v1*v2*x * v2*v1
 print(f"Rotation Angle: {theta * (180 / np.pi)}")
 print(f"Original Vector: {x}")
 print(f"Rotated vector: {x_rot}")
@@ -54,9 +54,9 @@ cos_theta = np.dot(x_np, x_rot_np) / (np.linalg.norm(x_np) * np.linalg.norm(x_ro
 theta = np.arccos(cos_theta) * 180 / np.pi
 
 # Set the limits of the plot
-xlim = 5
-ylim = 5
-zlim = 5
+xlim = 2
+ylim = 2
+zlim = 2
 ax.set_xlim([-1 * xlim, xlim])
 ax.set_ylim([-1 * ylim, ylim])
 ax.set_zlim([-1 * zlim, zlim])
