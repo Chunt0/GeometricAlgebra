@@ -15,7 +15,7 @@ e12 = blades['e12']
 
 x0, y0, z0 = 1, 1, 1  # Original vector coordinates
 x1, y1, z1 = 1, 0, 0  # v1 coordinates
-x2, y2, z2 = 1, 1, 0  # v2 coordinates
+x2, y2, z2 = 1, 1, 1  # v2 coordinates
 
 # Define my original 2d vector
 x = x0 * e1 + y0 * e2 + z0 * e3
@@ -60,6 +60,9 @@ zlim = 2
 ax.set_xlim([-1 * xlim, xlim])
 ax.set_ylim([-1 * ylim, ylim])
 ax.set_zlim([-1 * zlim, zlim])
+
+# Set the aspect ratio to make the plot square
+ax.set_aspect('auto')
 
 # Add labels and title
 ax.set_xlabel('X')
