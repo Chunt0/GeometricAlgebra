@@ -3,9 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Euler's formula to rotate a vector by theta
-# There's an issue with getting a vector back with complex components
-# and sometimes one or the other value in the list is 0. Anyway this tries
-# to clean things up and give me a nice np.array to work with.
 def eulers_rot(vec, theta):
     complex_rotation = (vec[0] + vec[1]*1j)*np.exp(1j*theta)
     vec_rot =np.array([np.real(complex_rotation), np.imag(complex_rotation)])
