@@ -32,5 +32,5 @@ if __name__ == '__main__':
     x_rot_np = euc_mv_to_np(x_rot)
     
     # Create the plotter and plot the vectors
-    plot = plot.VectorPlotter()
+    plot = plot.VectorPlotter([-5,5])
     plot.plot(x_np, x_rot_np)

@@ -2,12 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class VectorPlotter:
-    def __init__(self):
+    def __init__(self, limits=[-5,5]):
         self.fig, self.ax = plt.subplots()
         
         # Set the limits of the plot
-        self.ax.set_xlim([-5, 5])
-        self.ax.set_ylim([-5, 5])
+        self.ax.set_xlim(limits)
+        self.ax.set_ylim(limits)
         
         # Set the aspect ratio to make the plot square
         self.ax.set_aspect('equal')
