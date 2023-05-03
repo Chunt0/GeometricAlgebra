@@ -31,8 +31,10 @@ if __name__ == '__main__':
     A = 3*e1+4*e2
     B = e1
     cos_theta = np.arccos(abs((A|B)(0)/(abs(A)*abs(B))))
-    print(cos_theta)
+
+    print(A)
+    print(A.inv()*A)
 
     # Create the plotter and plot the vectors
     plot = plot.VectorPlotter([-2,2])
-    plot.plot(x_np, x_rot_np)
+    #plot.plot(x_np, x_rot_np)
