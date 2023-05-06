@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[margin=.9in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{csquotes}
+\usepackage{float}
+\newtheorem*{claim}{Claim}
+\newtheorem*{poof}{Proof}
+\title{HW 5}
+\author{Christopher Hunt}
+\date{}
+\usepackage{graphicx} 
+\usepackage{fancyhdr}
+
+\begin{document}
+The geometric product of three multivectors in 2D can be written as:
+
+$(a_0 + a_1 e_1)(b_0 + b_1 e_1)(c_0 + c_1 e_1)$
+
+Expanding this product using the distributive property and the rules of the geometric product yields:
+
+$(a_0 b_0 c_0) + (a_0 b_1 c_1 - a_0 b_0 c_1 - a_0 b_1 c_0 + a_1 b_0 c_1 + a_1 b_1 c_0 - a_1 b_0 c_0)e_1$
+
+where $a_0, b_0, c_0$ are scalars, and $a_1, b_1, c_1$ are the bivectors (2-blades) representing the oriented area spanned by the vectors $a, b,$ and $c$, respectively.
+\end{document}
